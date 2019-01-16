@@ -10,7 +10,7 @@ function loadScript (url) {
 function loadStyle (url) {
   return new Promise((resolve) => {
     const script = document.createElement('link')
-    script.ref = "stylesheet"
+    script.rel = "stylesheet"
     script.type = "text/css"
     script.href = url
     script.onload = resolve
