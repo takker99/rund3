@@ -34,14 +34,14 @@ async function loadAllStyles (urls) {
 
 async function loadAllScripts2 (codes) {
     for (let code of codes) {
-	console.log(`https://Scrapbox.io/${project}/${code}`)
-	await loadScript(`https://Scrapbox.io/${project}/${code}`)
+	console.log(`https://Scrapbox.io/api/code/${project}/${code}`)
+	await loadScript(`https://Scrapbox.io/api/code/${project}/${code}`)
     }
 }
 
 async function loadAllStyles2 (styles) {
     for (let style of styles) {
-	await loadStyle(`https://Scrapbox.io/${project}/${style}`)
+	await loadStyle(`https://Scrapbox.io/api/code/${project}/${style}`)
     }
 }
 
