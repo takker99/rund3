@@ -34,6 +34,7 @@ async function loadAllStyles (urls) {
 
 async function loadAllScripts2 (codes) {
     for (let code of codes) {
+	console.log(`https://Scrapbox.io/${project}/${code}`)
 	await loadScript(`https://Scrapbox.io/${project}/${code}`)
     }
 }
