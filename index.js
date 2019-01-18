@@ -73,6 +73,6 @@ $(function(){
     }
     if (p && slist) {
 	let styles = slist.split(/,/)
-	loadAllStyles22(styles)
+	loadAllStyles2(styles)
     }
 })
