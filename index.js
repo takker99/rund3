@@ -3,6 +3,13 @@
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
 
+import htm from "https://cdn.jsdelivr.net/npm/htm@3.1.1/+esm";
+import * as Preact from "https://cdn.jsdelivr.net/npm/preact@10.12.0/+esm";
+import * as Hooks from "https://cdn.jsdelivr.net/npm/preact@10.12.0/hooks/+esm";
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.8.2/+esm";
+globalThis.htmPreact = { html: htm.bind(Preact.h), ...Preact, ...Hooks };
+globalThis.d3 = d3;
+
 /** @param {string} url
  * @return {Promise<void>}
  */
@@ -48,8 +55,6 @@ const loadAllStyles = async (urls) => {
   }
 };
 
-globalThis.addEventListener("load", () => {
-  const params = new URLSearchParams(location.search);
-  loadAllScripts(params.getAll("js"));
-  loadAllStyles(params.getAll("css"));
-});
+const params = new URLSearchParams(location.search);
+loadAllScripts(params.getAll("js"));
+loadAllStyles(params.getAll("css"));
